@@ -1,4 +1,4 @@
-# 🎓 [SIS-112] Programación I
+# 🎓 [SIS-112] Programación I (2-2026)
 
 ![Universidad Católica Boliviana](https://img.shields.io/badge/UCB-Santa%20Cruz-003366?style=for-the-badge)
 ![Carrera](https://img.shields.io/badge/Carrera-Ingenier%C3%ADa%20Industrial-008080?style=for-the-badge)
