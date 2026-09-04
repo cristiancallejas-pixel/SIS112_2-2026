@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma Dinámica - UCB</title>
+  <style>
+    :root {
+      --ucb-blue: #002B49;
+      --ucb-gold: #F2A900;
+      --ucb-light-blue: #004B87;
+      --bg-color: #F4F6F8;
+      --card-bg: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      border-top: 6px solid var(--ucb-gold);
+    }
+
+    .card-header {
+      background-color: var(--ucb-blue);
+      color: #FFFFFF;
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .card-header h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-header p {
+      font-size: 0.8rem;
+      color: var(--ucb-gold);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .card-body {
+      padding: 24px 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ucb-blue);
+      margin-bottom: 6px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #E0E0E0;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+
+    input[type="number"]:focus {
+      border-color: var(--ucb-light-blue);
+    }
+
+    .result-box {
+      margin-top: 20px;
+      padding: 16px;
+      background-color: rgba(242, 169, 0, 0.12);
+      border-left: 4px solid var(--ucb-gold);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .result-box span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--ucb-blue);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .result-box p {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--ucb-blue);
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <h2>Suma de Números</h2>
+      <p>Universidad Católica Boliviana "San Pablo"</p>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="numA">Valor A</label>
+        <input type="number" id="numA" placeholder="Ingrese primer número" oninput="calcular()">
+      </div>
+      <div class="form-group">
+        <label for="numB">Valor B</label>
+        <input type="number" id="numB" placeholder="Ingrese segundo número" oninput="calcular()">
+      </div>
+
+      <div class="result-box">
+        <span>Resultado</span>
+        <p id="resultado">0</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Código original
+    function suma(a, b) {
+        return a + b;
+    }
+
+    // Ejecución dinámica vinculada a la interfaz
+    function calcular() {
+        const valA = parseFloat(document.getElementById('numA').value) || 0;
+        const valB = parseFloat(document.getElementById('numB').value) || 0;
+        
+        const res = suma(valA, valB);
+        
+        document.getElementById('resultado').textContent = res;
+    }
+  </script>
+
+</body>
+</html>
