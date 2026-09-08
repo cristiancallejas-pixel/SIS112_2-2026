@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programación 1 - UCB</title>
+  <style>
+    :root {
+      --ucb-blue: #002B49;
+      --ucb-gold: #FDB813;
+      --ucb-blue-light: #00406C;
+      --ucb-bg: #F4F6F8;
+      --text-color: #333333;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--ucb-bg);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: var(--ucb-blue);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+      border-bottom: 5px solid var(--ucb-gold);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .brand h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .brand p {
+      color: var(--ucb-gold);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--ucb-gold);
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      flex: 1;
+    }
+
+    .hero {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 8px;
+      border-left: 6px solid var(--ucb-blue);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h2 {
+      color: var(--ucb-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    }
+
+    .card-header {
+      background-color: var(--ucb-blue);
+      color: var(--white);
+      padding: 1.2rem;
+      border-top: 4px solid var(--ucb-gold);
+    }
+
+    .card-header h3 {
+      font-size: 1.25rem;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-body p {
+      color: #666;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      background-color: var(--ucb-gold);
+      color: var(--ucb-blue);
+      font-weight: 700;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: var(--ucb-blue);
+      color: var(--white);
+    }
+
+    footer {
+      background-color: var(--ucb-blue);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: auto;
+      border-top: 3px solid var(--ucb-gold);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="brand">
+        <h1>Programación 1</h1>
+        <p>Universidad Católica Boliviana</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#unidades">Unidades</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Contenido Curricular</h2>
+      <p>Bienvenido al portal de la asignatura de Programación 1. Explora las unidades temáticas para revisar el material y ejercicios de la clase.</p>
+    </section>
+
+    <section id="unidades" class="grid-container">
+      <article class="card">
+        <div class="card-header">
+          <h3>Unidad: Enteros</h3>
+        </div>
+        <div class="card-body">
+          <p>Operaciones aritméticas básicas, manejo de tipos de datos numéricos enteros, operadores relacionales y representación en memoria.</p>
+          <a href="#" class="btn">Ver Contenido</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>Unidad: Cadenas</h3>
+        </div>
+        <div class="card-body">
+          <p>Manipulación de texto, operaciones de concatenación, métodos de formato, indexación y slicing sobre secuencias de caracteres.</p>
+          <a href="#" class="btn">Ver Contenido</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>Unidad: Listas</h3>
+        </div>
+        <div class="card-body">
+          <p>Estructuras de datos lineales mutables, métodos de ordenamiento, inserción, eliminación y recorrido mediante iteradores.</p>
+          <a href="#" class="btn">Ver Contenido</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-header">
+          <h3>Unidad: Diccionarios</h3>
+        </div>
+        <div class="card-body">
+          <p>Estructuras de datos basadas en clave-valor, métodos de consulta rápida, modificación y aplicaciones prácticas en algoritmos.</p>
+          <a href="#" class="btn">Ver Contenido</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <p>&copy; 2026 Universidad Católica Boliviana "San Pablo" — Departamento de Ingenierías y Ciencias Exactas</p>
+  </footer>
+
+</body>
+</html>
